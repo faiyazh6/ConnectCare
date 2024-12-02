@@ -1,0 +1,612 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		FC60E8202CFD659800758C42 /* ConnectCareApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC60E81F2CFD659800758C42 /* ConnectCareApp.swift */; };
+		FC60E8222CFD659800758C42 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC60E8212CFD659800758C42 /* ContentView.swift */; };
+		FC60E8242CFD659900758C42 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FC60E8232CFD659900758C42 /* Assets.xcassets */; };
+		FC60E8272CFD659900758C42 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FC60E8262CFD659900758C42 /* Preview Assets.xcassets */; };
+		FC60E8322CFD659900758C42 /* ConnectCareTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC60E8312CFD659900758C42 /* ConnectCareTests.swift */; };
+		FC60E83C2CFD659900758C42 /* ConnectCareUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC60E83B2CFD659900758C42 /* ConnectCareUITests.swift */; };
+		FC60E83E2CFD659900758C42 /* ConnectCareUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC60E83D2CFD659900758C42 /* ConnectCareUITestsLaunchTests.swift */; };
+		FC60E84B2CFD65DC00758C42 /* RoleSelectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC60E84A2CFD65DC00758C42 /* RoleSelectionView.swift */; };
+		FC60E84D2CFD65ED00758C42 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC60E84C2CFD65ED00758C42 /* HomeView.swift */; };
+		FC60E84F2CFD660800758C42 /* TaskManagerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC60E84E2CFD660800758C42 /* TaskManagerView.swift */; };
+		FC60E8512CFD662700758C42 /* ReminderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC60E8502CFD662700758C42 /* ReminderView.swift */; };
+		FC60E8532CFD664200758C42 /* CareNotesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC60E8522CFD664200758C42 /* CareNotesView.swift */; };
+		FC60E8552CFD747900758C42 /* ProfessionalButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC60E8542CFD747900758C42 /* ProfessionalButton.swift */; };
+		FC60E8592CFD78E300758C42 /* Color+Hex.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC60E8582CFD78E300758C42 /* Color+Hex.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		FC60E82E2CFD659900758C42 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = FC60E8142CFD659800758C42 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = FC60E81B2CFD659800758C42;
+			remoteInfo = ConnectCare;
+		};
+		FC60E8382CFD659900758C42 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = FC60E8142CFD659800758C42 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = FC60E81B2CFD659800758C42;
+			remoteInfo = ConnectCare;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		FC60E81C2CFD659800758C42 /* ConnectCare.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ConnectCare.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		FC60E81F2CFD659800758C42 /* ConnectCareApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConnectCareApp.swift; sourceTree = "<group>"; };
+		FC60E8212CFD659800758C42 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		FC60E8232CFD659900758C42 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		FC60E8262CFD659900758C42 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		FC60E8282CFD659900758C42 /* ConnectCare.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = ConnectCare.entitlements; sourceTree = "<group>"; };
+		FC60E82D2CFD659900758C42 /* ConnectCareTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ConnectCareTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		FC60E8312CFD659900758C42 /* ConnectCareTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConnectCareTests.swift; sourceTree = "<group>"; };
+		FC60E8372CFD659900758C42 /* ConnectCareUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ConnectCareUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		FC60E83B2CFD659900758C42 /* ConnectCareUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConnectCareUITests.swift; sourceTree = "<group>"; };
+		FC60E83D2CFD659900758C42 /* ConnectCareUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConnectCareUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		FC60E84A2CFD65DC00758C42 /* RoleSelectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoleSelectionView.swift; sourceTree = "<group>"; };
+		FC60E84C2CFD65ED00758C42 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		FC60E84E2CFD660800758C42 /* TaskManagerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskManagerView.swift; sourceTree = "<group>"; };
+		FC60E8502CFD662700758C42 /* ReminderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReminderView.swift; sourceTree = "<group>"; };
+		FC60E8522CFD664200758C42 /* CareNotesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CareNotesView.swift; sourceTree = "<group>"; };
+		FC60E8542CFD747900758C42 /* ProfessionalButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfessionalButton.swift; sourceTree = "<group>"; };
+		FC60E8582CFD78E300758C42 /* Color+Hex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+Hex.swift"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		FC60E8192CFD659800758C42 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FC60E82A2CFD659900758C42 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FC60E8342CFD659900758C42 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		FC60E8132CFD659800758C42 = {
+			isa = PBXGroup;
+			children = (
+				FC60E81E2CFD659800758C42 /* ConnectCare */,
+				FC60E8302CFD659900758C42 /* ConnectCareTests */,
+				FC60E83A2CFD659900758C42 /* ConnectCareUITests */,
+				FC60E81D2CFD659800758C42 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		FC60E81D2CFD659800758C42 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				FC60E81C2CFD659800758C42 /* ConnectCare.app */,
+				FC60E82D2CFD659900758C42 /* ConnectCareTests.xctest */,
+				FC60E8372CFD659900758C42 /* ConnectCareUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		FC60E81E2CFD659800758C42 /* ConnectCare */ = {
+			isa = PBXGroup;
+			children = (
+				FC60E81F2CFD659800758C42 /* ConnectCareApp.swift */,
+				FC60E8582CFD78E300758C42 /* Color+Hex.swift */,
+				FC60E8212CFD659800758C42 /* ContentView.swift */,
+				FC60E8232CFD659900758C42 /* Assets.xcassets */,
+				FC60E8282CFD659900758C42 /* ConnectCare.entitlements */,
+				FC60E8252CFD659900758C42 /* Preview Content */,
+				FC60E84A2CFD65DC00758C42 /* RoleSelectionView.swift */,
+				FC60E84C2CFD65ED00758C42 /* HomeView.swift */,
+				FC60E84E2CFD660800758C42 /* TaskManagerView.swift */,
+				FC60E8502CFD662700758C42 /* ReminderView.swift */,
+				FC60E8522CFD664200758C42 /* CareNotesView.swift */,
+				FC60E8542CFD747900758C42 /* ProfessionalButton.swift */,
+			);
+			path = ConnectCare;
+			sourceTree = "<group>";
+		};
+		FC60E8252CFD659900758C42 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				FC60E8262CFD659900758C42 /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		FC60E8302CFD659900758C42 /* ConnectCareTests */ = {
+			isa = PBXGroup;
+			children = (
+				FC60E8312CFD659900758C42 /* ConnectCareTests.swift */,
+			);
+			path = ConnectCareTests;
+			sourceTree = "<group>";
+		};
+		FC60E83A2CFD659900758C42 /* ConnectCareUITests */ = {
+			isa = PBXGroup;
+			children = (
+				FC60E83B2CFD659900758C42 /* ConnectCareUITests.swift */,
+				FC60E83D2CFD659900758C42 /* ConnectCareUITestsLaunchTests.swift */,
+			);
+			path = ConnectCareUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		FC60E81B2CFD659800758C42 /* ConnectCare */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FC60E8412CFD659900758C42 /* Build configuration list for PBXNativeTarget "ConnectCare" */;
+			buildPhases = (
+				FC60E8182CFD659800758C42 /* Sources */,
+				FC60E8192CFD659800758C42 /* Frameworks */,
+				FC60E81A2CFD659800758C42 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = ConnectCare;
+			productName = ConnectCare;
+			productReference = FC60E81C2CFD659800758C42 /* ConnectCare.app */;
+			productType = "com.apple.product-type.application";
+		};
+		FC60E82C2CFD659900758C42 /* ConnectCareTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FC60E8442CFD659900758C42 /* Build configuration list for PBXNativeTarget "ConnectCareTests" */;
+			buildPhases = (
+				FC60E8292CFD659900758C42 /* Sources */,
+				FC60E82A2CFD659900758C42 /* Frameworks */,
+				FC60E82B2CFD659900758C42 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				FC60E82F2CFD659900758C42 /* PBXTargetDependency */,
+			);
+			name = ConnectCareTests;
+			productName = ConnectCareTests;
+			productReference = FC60E82D2CFD659900758C42 /* ConnectCareTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		FC60E8362CFD659900758C42 /* ConnectCareUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FC60E8472CFD659900758C42 /* Build configuration list for PBXNativeTarget "ConnectCareUITests" */;
+			buildPhases = (
+				FC60E8332CFD659900758C42 /* Sources */,
+				FC60E8342CFD659900758C42 /* Frameworks */,
+				FC60E8352CFD659900758C42 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				FC60E8392CFD659900758C42 /* PBXTargetDependency */,
+			);
+			name = ConnectCareUITests;
+			productName = ConnectCareUITests;
+			productReference = FC60E8372CFD659900758C42 /* ConnectCareUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		FC60E8142CFD659800758C42 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1540;
+				LastUpgradeCheck = 1540;
+				TargetAttributes = {
+					FC60E81B2CFD659800758C42 = {
+						CreatedOnToolsVersion = 15.4;
+					};
+					FC60E82C2CFD659900758C42 = {
+						CreatedOnToolsVersion = 15.4;
+						TestTargetID = FC60E81B2CFD659800758C42;
+					};
+					FC60E8362CFD659900758C42 = {
+						CreatedOnToolsVersion = 15.4;
+						TestTargetID = FC60E81B2CFD659800758C42;
+					};
+				};
+			};
+			buildConfigurationList = FC60E8172CFD659800758C42 /* Build configuration list for PBXProject "ConnectCare" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = FC60E8132CFD659800758C42;
+			productRefGroup = FC60E81D2CFD659800758C42 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				FC60E81B2CFD659800758C42 /* ConnectCare */,
+				FC60E82C2CFD659900758C42 /* ConnectCareTests */,
+				FC60E8362CFD659900758C42 /* ConnectCareUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		FC60E81A2CFD659800758C42 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FC60E8272CFD659900758C42 /* Preview Assets.xcassets in Resources */,
+				FC60E8242CFD659900758C42 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FC60E82B2CFD659900758C42 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FC60E8352CFD659900758C42 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		FC60E8182CFD659800758C42 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FC60E84F2CFD660800758C42 /* TaskManagerView.swift in Sources */,
+				FC60E8532CFD664200758C42 /* CareNotesView.swift in Sources */,
+				FC60E84B2CFD65DC00758C42 /* RoleSelectionView.swift in Sources */,
+				FC60E8512CFD662700758C42 /* ReminderView.swift in Sources */,
+				FC60E8552CFD747900758C42 /* ProfessionalButton.swift in Sources */,
+				FC60E84D2CFD65ED00758C42 /* HomeView.swift in Sources */,
+				FC60E8222CFD659800758C42 /* ContentView.swift in Sources */,
+				FC60E8202CFD659800758C42 /* ConnectCareApp.swift in Sources */,
+				FC60E8592CFD78E300758C42 /* Color+Hex.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FC60E8292CFD659900758C42 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FC60E8322CFD659900758C42 /* ConnectCareTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FC60E8332CFD659900758C42 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FC60E83E2CFD659900758C42 /* ConnectCareUITestsLaunchTests.swift in Sources */,
+				FC60E83C2CFD659900758C42 /* ConnectCareUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		FC60E82F2CFD659900758C42 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = FC60E81B2CFD659800758C42 /* ConnectCare */;
+			targetProxy = FC60E82E2CFD659900758C42 /* PBXContainerItemProxy */;
+		};
+		FC60E8392CFD659900758C42 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = FC60E81B2CFD659800758C42 /* ConnectCare */;
+			targetProxy = FC60E8382CFD659900758C42 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		FC60E83F2CFD659900758C42 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MACOSX_DEPLOYMENT_TARGET = 14.5;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		FC60E8402CFD659900758C42 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MACOSX_DEPLOYMENT_TARGET = 14.5;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = macosx;
+				SWIFT_COMPILATION_MODE = wholemodule;
+			};
+			name = Release;
+		};
+		FC60E8422CFD659900758C42 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = ConnectCare/ConnectCare.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"ConnectCare/Preview Content\"";
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = edu.upenn.cis.1951.ConnectCare;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SUPPORTS_MACCATALYST = NO;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Debug;
+		};
+		FC60E8432CFD659900758C42 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = ConnectCare/ConnectCare.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"ConnectCare/Preview Content\"";
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = edu.upenn.cis.1951.ConnectCare;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SUPPORTS_MACCATALYST = NO;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Release;
+		};
+		FC60E8452CFD659900758C42 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 14.5;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = edu.upenn.cis.1951.ConnectCareTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ConnectCare.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/ConnectCare";
+			};
+			name = Debug;
+		};
+		FC60E8462CFD659900758C42 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 14.5;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = edu.upenn.cis.1951.ConnectCareTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ConnectCare.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/ConnectCare";
+			};
+			name = Release;
+		};
+		FC60E8482CFD659900758C42 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = edu.upenn.cis.1951.ConnectCareUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TEST_TARGET_NAME = ConnectCare;
+			};
+			name = Debug;
+		};
+		FC60E8492CFD659900758C42 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = edu.upenn.cis.1951.ConnectCareUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TEST_TARGET_NAME = ConnectCare;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		FC60E8172CFD659800758C42 /* Build configuration list for PBXProject "ConnectCare" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FC60E83F2CFD659900758C42 /* Debug */,
+				FC60E8402CFD659900758C42 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		FC60E8412CFD659900758C42 /* Build configuration list for PBXNativeTarget "ConnectCare" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FC60E8422CFD659900758C42 /* Debug */,
+				FC60E8432CFD659900758C42 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		FC60E8442CFD659900758C42 /* Build configuration list for PBXNativeTarget "ConnectCareTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FC60E8452CFD659900758C42 /* Debug */,
+				FC60E8462CFD659900758C42 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		FC60E8472CFD659900758C42 /* Build configuration list for PBXNativeTarget "ConnectCareUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FC60E8482CFD659900758C42 /* Debug */,
+				FC60E8492CFD659900758C42 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = FC60E8142CFD659800758C42 /* Project object */;
+}
