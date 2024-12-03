@@ -2,6 +2,7 @@ import SwiftUI
 
 struct CareNotesView: View {
     @AppStorage("notes") private var notesData: String = "[]" // Persistent storage for notes
+    @AppStorage("userRole") private var userRole: String = "" // Current user's role
     @State private var notes: [Note] = []
     @State private var newNoteContent = ""
 
@@ -38,6 +39,14 @@ struct CareNotesView: View {
                 .foregroundColor(.primaryColor)
                 .padding()
 
+            if userRole == "Family Member" {
+                Text("You can view care notes but are not allowed to add or delete them.")
+                    .font(.system(size: 15, weight: .medium, design: .rounded))
+                    .foregroundColor(.red)
+                    .multilineTextAlignment(.center)
+                    .padding(.horizontal)
+            }
+
             List {
                 ForEach(notes.indices, id: \.self) { index in
                     VStack(alignment: .leading) {
@@ -49,23 +58,39 @@ struct CareNotesView: View {
                     }
                 }
                 .onDelete { indexSet in
-                    notes.remove(atOffsets: indexSet)
-                    saveNotes()
+                    // Prevent deletion if the user is a family member
+                    if userRole != "Family Member" {
+                        notes.remove(atOffsets: indexSet)
+                        saveNotes()
+                    }
+                }
+                .swipeActions(edge: .trailing, allowsFullSwipe: false) {
+                    if userRole != "Family Member" { // Disable swipe actions for family members
+                        Button(role: .destructive) {
+                            // Placeholder for swipe action (delete)
+                        } label: {
+                            Label("Delete", systemImage: "trash")
+                        }
+                    }
                 }
             }
             .listStyle(InsetGroupedListStyle())
+            .disabled(userRole == "Family Member") // Fully disable the List interaction for family members
 
-            HStack {
-                TextField("New Note", text: $newNoteContent)
-                    .textFieldStyle(RoundedBorderTextFieldStyle())
+            if userRole != "Family Member" { // Only show input fields for non-family members
+                HStack {
+                    TextField("New Note", text: $newNoteContent)
+                        .textFieldStyle(RoundedBorderTextFieldStyle())
+                        .padding(.horizontal)
 
-                Button(action: addNote) {
-                    Image(systemName: "plus.circle.fill")
-                        .font(.largeTitle)
-                        .foregroundColor(.accentColor)
+                    Button(action: addNote) {
+                        Image(systemName: "plus.circle.fill")
+                            .font(.largeTitle)
+                            .foregroundColor(.accentColor)
+                    }
                 }
+                .padding()
             }
-            .padding()
         }
         .onAppear(perform: loadNotes)
     }

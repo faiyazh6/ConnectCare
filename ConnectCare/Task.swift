@@ -8,8 +8,10 @@
 import Foundation
 
 struct Task: Identifiable, Codable {
-    let id = UUID()
+    var id = UUID()
     var title: String
     var isCompleted: Bool
     var dueDate: Date
+    var role: String // Add this property
+    var isDeleted: Bool = false
 }

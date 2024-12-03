@@ -8,7 +8,8 @@
 import Foundation
 
 struct Reminder: Identifiable, Codable {
-    let id = UUID()
+    var id = UUID()
     var title: String
     var time: Date
+    var role: String // Add this property
 }

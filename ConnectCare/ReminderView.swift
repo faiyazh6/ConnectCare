@@ -2,6 +2,7 @@ import SwiftUI
 
 struct ReminderView: View {
     @AppStorage("reminders") private var remindersData: String = "[]" // Persistent storage for reminders
+    @AppStorage("userRole") var userRole: String = "" // Current user's role
     @State private var reminders: [Reminder] = []
     @State private var newReminderTitle = ""
     @State private var reminderTime = Date()
@@ -25,28 +26,10 @@ struct ReminderView: View {
     }
 
     private func addReminder() {
-        let newReminder = Reminder(title: newReminderTitle, time: reminderTime)
+        let newReminder = Reminder(title: newReminderTitle, time: reminderTime, role: userRole)
         reminders.append(newReminder)
-        scheduleNotification(for: newReminder)
         saveReminders()
         newReminderTitle = ""
-    }
-
-    private func scheduleNotification(for reminder: Reminder) {
-        let content = UNMutableNotificationContent()
-        content.title = "Reminder"
-        content.body = reminder.title
-        content.sound = .default
-
-        let triggerDate = Calendar.current.dateComponents([.hour, .minute], from: reminder.time)
-        let trigger = UNCalendarNotificationTrigger(dateMatching: triggerDate, repeats: false)
-
-        let request = UNNotificationRequest(identifier: reminder.id.uuidString, content: content, trigger: trigger)
-        UNUserNotificationCenter.current().add(request) { error in
-            if let error = error {
-                print("Error scheduling notification: \(error.localizedDescription)")
-            }
-        }
     }
 
     var body: some View {
@@ -60,10 +43,16 @@ struct ReminderView: View {
             List {
                 ForEach(reminders.indices, id: \.self) { index in
                     ReminderRow(reminder: reminders[index])
-                }
-                .onDelete { indexSet in
-                    reminders.remove(atOffsets: indexSet)
-                    saveReminders()
+                        .swipeActions(edge: .trailing, allowsFullSwipe: false) {
+                            if reminders[index].role == userRole { // Allow swipe-to-delete only for reminders created by the user
+                                Button(role: .destructive) {
+                                    reminders.remove(at: index)
+                                    saveReminders()
+                                } label: {
+                                    Label("Delete", systemImage: "trash")
+                                }
+                            }
+                        }
                 }
             }
             .listStyle(InsetGroupedListStyle())
@@ -96,6 +85,9 @@ struct ReminderRow: View {
                 .font(.headline)
             Text("Time: \(reminder.time, style: .time)")
                 .font(.subheadline)
+                .foregroundColor(.gray)
+            Text("Created by: \(reminder.role)")
+                .font(.footnote)
                 .foregroundColor(.gray)
         }
         .padding(.vertical, 5)
