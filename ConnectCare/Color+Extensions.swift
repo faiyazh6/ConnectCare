@@ -1,11 +1,11 @@
 import SwiftUI
 
 extension Color {
-    static let primaryColor = Color(hex: "#1E88E5")
-    static let secondaryColor = Color(hex: "#43A047")
-    static let accentColor = Color(hex: "#FB8C00")
-    static let backgroundColor = Color(hex: "#F5F5F5")
-    static let dangerColor = Color(hex: "#E53935")
+    static let primaryColor = Color("PrimaryColor") // Matches the color set name in Assets
+    static let secondaryColor = Color("SecondaryColor")
+    static let accentColor = Color("AccentColor")
+    static let backgroundColor = Color("BackgroundColor")
+    static let dangerColor = Color("DangerColor")
 
     init(hex: String) {
         let scanner = Scanner(string: hex)
