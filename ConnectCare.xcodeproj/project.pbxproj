@@ -7,6 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8AAF661B2CFEDB1B000E487E /* Task.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AAF661A2CFEDB1B000E487E /* Task.swift */; };
+		8AAF661D2CFEDB42000E487E /* Reminder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AAF661C2CFEDB42000E487E /* Reminder.swift */; };
+		8AAF661F2CFEDB59000E487E /* Note.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AAF661E2CFEDB59000E487E /* Note.swift */; };
+		8AAF66212CFEDB77000E487E /* AppViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AAF66202CFEDB77000E487E /* AppViewModel.swift */; };
+		8AAF66272CFEDCC1000E487E /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AAF66262CFEDCC1000E487E /* ProfileView.swift */; };
+		8AAF66292CFEDD69000E487E /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AAF66282CFEDD69000E487E /* Utils.swift */; };
+		8AAF662B2CFEDFD8000E487E /* CalendarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AAF662A2CFEDFD8000E487E /* CalendarView.swift */; };
 		FC60E8202CFD659800758C42 /* ConnectCareApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC60E81F2CFD659800758C42 /* ConnectCareApp.swift */; };
 		FC60E8222CFD659800758C42 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC60E8212CFD659800758C42 /* ContentView.swift */; };
 		FC60E8242CFD659900758C42 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FC60E8232CFD659900758C42 /* Assets.xcassets */; };
@@ -19,8 +26,7 @@
 		FC60E84F2CFD660800758C42 /* TaskManagerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC60E84E2CFD660800758C42 /* TaskManagerView.swift */; };
 		FC60E8512CFD662700758C42 /* ReminderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC60E8502CFD662700758C42 /* ReminderView.swift */; };
 		FC60E8532CFD664200758C42 /* CareNotesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC60E8522CFD664200758C42 /* CareNotesView.swift */; };
-		FC60E8552CFD747900758C42 /* ProfessionalButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC60E8542CFD747900758C42 /* ProfessionalButton.swift */; };
-		FC60E8592CFD78E300758C42 /* Color+Hex.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC60E8582CFD78E300758C42 /* Color+Hex.swift */; };
+		FC60E8592CFD78E300758C42 /* Color+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC60E8582CFD78E300758C42 /* Color+Extensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -41,6 +47,13 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		8AAF661A2CFEDB1B000E487E /* Task.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Task.swift; sourceTree = "<group>"; };
+		8AAF661C2CFEDB42000E487E /* Reminder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reminder.swift; sourceTree = "<group>"; };
+		8AAF661E2CFEDB59000E487E /* Note.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Note.swift; sourceTree = "<group>"; };
+		8AAF66202CFEDB77000E487E /* AppViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppViewModel.swift; sourceTree = "<group>"; };
+		8AAF66262CFEDCC1000E487E /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
+		8AAF66282CFEDD69000E487E /* Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
+		8AAF662A2CFEDFD8000E487E /* CalendarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarView.swift; sourceTree = "<group>"; };
 		FC60E81C2CFD659800758C42 /* ConnectCare.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ConnectCare.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FC60E81F2CFD659800758C42 /* ConnectCareApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConnectCareApp.swift; sourceTree = "<group>"; };
 		FC60E8212CFD659800758C42 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -57,8 +70,7 @@
 		FC60E84E2CFD660800758C42 /* TaskManagerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskManagerView.swift; sourceTree = "<group>"; };
 		FC60E8502CFD662700758C42 /* ReminderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReminderView.swift; sourceTree = "<group>"; };
 		FC60E8522CFD664200758C42 /* CareNotesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CareNotesView.swift; sourceTree = "<group>"; };
-		FC60E8542CFD747900758C42 /* ProfessionalButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfessionalButton.swift; sourceTree = "<group>"; };
-		FC60E8582CFD78E300758C42 /* Color+Hex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+Hex.swift"; sourceTree = "<group>"; };
+		FC60E8582CFD78E300758C42 /* Color+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+Extensions.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -110,17 +122,23 @@
 			isa = PBXGroup;
 			children = (
 				FC60E81F2CFD659800758C42 /* ConnectCareApp.swift */,
-				FC60E8582CFD78E300758C42 /* Color+Hex.swift */,
+				8AAF66282CFEDD69000E487E /* Utils.swift */,
+				8AAF66202CFEDB77000E487E /* AppViewModel.swift */,
+				8AAF661E2CFEDB59000E487E /* Note.swift */,
+				8AAF661C2CFEDB42000E487E /* Reminder.swift */,
+				8AAF661A2CFEDB1B000E487E /* Task.swift */,
+				FC60E8582CFD78E300758C42 /* Color+Extensions.swift */,
 				FC60E8212CFD659800758C42 /* ContentView.swift */,
 				FC60E8232CFD659900758C42 /* Assets.xcassets */,
 				FC60E8282CFD659900758C42 /* ConnectCare.entitlements */,
 				FC60E8252CFD659900758C42 /* Preview Content */,
 				FC60E84A2CFD65DC00758C42 /* RoleSelectionView.swift */,
 				FC60E84C2CFD65ED00758C42 /* HomeView.swift */,
+				8AAF662A2CFEDFD8000E487E /* CalendarView.swift */,
 				FC60E84E2CFD660800758C42 /* TaskManagerView.swift */,
 				FC60E8502CFD662700758C42 /* ReminderView.swift */,
 				FC60E8522CFD664200758C42 /* CareNotesView.swift */,
-				FC60E8542CFD747900758C42 /* ProfessionalButton.swift */,
+				8AAF66262CFEDCC1000E487E /* ProfileView.swift */,
 			);
 			path = ConnectCare;
 			sourceTree = "<group>";
@@ -282,13 +300,19 @@
 			files = (
 				FC60E84F2CFD660800758C42 /* TaskManagerView.swift in Sources */,
 				FC60E8532CFD664200758C42 /* CareNotesView.swift in Sources */,
+				8AAF662B2CFEDFD8000E487E /* CalendarView.swift in Sources */,
+				8AAF661D2CFEDB42000E487E /* Reminder.swift in Sources */,
+				8AAF66212CFEDB77000E487E /* AppViewModel.swift in Sources */,
+				8AAF661B2CFEDB1B000E487E /* Task.swift in Sources */,
 				FC60E84B2CFD65DC00758C42 /* RoleSelectionView.swift in Sources */,
+				8AAF66292CFEDD69000E487E /* Utils.swift in Sources */,
 				FC60E8512CFD662700758C42 /* ReminderView.swift in Sources */,
-				FC60E8552CFD747900758C42 /* ProfessionalButton.swift in Sources */,
+				8AAF66272CFEDCC1000E487E /* ProfileView.swift in Sources */,
 				FC60E84D2CFD65ED00758C42 /* HomeView.swift in Sources */,
 				FC60E8222CFD659800758C42 /* ContentView.swift in Sources */,
 				FC60E8202CFD659800758C42 /* ConnectCareApp.swift in Sources */,
-				FC60E8592CFD78E300758C42 /* Color+Hex.swift in Sources */,
+				FC60E8592CFD78E300758C42 /* Color+Extensions.swift in Sources */,
+				8AAF661F2CFEDB59000E487E /* Note.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

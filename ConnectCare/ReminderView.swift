@@ -1,13 +1,16 @@
 import SwiftUI
-import UserNotifications
 
 struct ReminderView: View {
-    @AppStorage("reminders") private var remindersData: String = "[]" // Store reminders as a JSON string
+    @AppStorage("reminders") private var remindersData: String = "[]" // Persistent storage for reminders
     @State private var reminders: [Reminder] = []
-    @State private var newReminder = ""
-    @State private var newTime = Date()
+    @State private var newReminderTitle = ""
+    @State private var reminderTime = Date()
 
     init() {
+        loadReminders()
+    }
+
+    private func loadReminders() {
         if let data = remindersData.data(using: .utf8),
            let decodedReminders = try? JSONDecoder().decode([Reminder].self, from: data) {
             reminders = decodedReminders
@@ -19,6 +22,14 @@ struct ReminderView: View {
            let jsonString = String(data: encodedData, encoding: .utf8) {
             remindersData = jsonString
         }
+    }
+
+    private func addReminder() {
+        let newReminder = Reminder(title: newReminderTitle, time: reminderTime)
+        reminders.append(newReminder)
+        scheduleNotification(for: newReminder)
+        saveReminders()
+        newReminderTitle = ""
     }
 
     private func scheduleNotification(for reminder: Reminder) {
@@ -42,62 +53,51 @@ struct ReminderView: View {
         VStack {
             Text("Reminders")
                 .font(.largeTitle)
-                .bold()
+                .fontWeight(.bold)
+                .foregroundColor(.primaryColor)
+                .padding()
 
             List {
                 ForEach(reminders.indices, id: \.self) { index in
-                    HStack {
-                        VStack(alignment: .leading) {
-                            Text(reminders[index].title)
-                            Text(reminders[index].time, style: .time)
-                                .font(.subheadline)
-                                .foregroundColor(.gray)
-                        }
-                        Spacer()
-                    }
+                    ReminderRow(reminder: reminders[index])
                 }
                 .onDelete { indexSet in
                     reminders.remove(atOffsets: indexSet)
                     saveReminders()
                 }
             }
+            .listStyle(InsetGroupedListStyle())
 
             HStack {
-                TextField("Enter reminder", text: $newReminder)
+                TextField("New Reminder", text: $newReminderTitle)
                     .textFieldStyle(RoundedBorderTextFieldStyle())
-                DatePicker("", selection: $newTime, displayedComponents: .hourAndMinute)
+
+                DatePicker("", selection: $reminderTime, displayedComponents: .hourAndMinute)
                     .labelsHidden()
 
-                Button(action: {
-                    if !newReminder.isEmpty {
-                        let newReminderEntry = Reminder(title: newReminder, time: newTime)
-                        reminders.append(newReminderEntry)
-                        scheduleNotification(for: newReminderEntry)
-                        saveReminders()
-                        newReminder = ""
-                    }
-                }) {
-                    Text("Add")
-                        .padding()
-                        .background(Color.orange)
-                        .foregroundColor(.white)
-                        .cornerRadius(10)
+                Button(action: addReminder) {
+                    Image(systemName: "plus.circle.fill")
+                        .font(.largeTitle)
+                        .foregroundColor(.accentColor)
                 }
             }
             .padding()
         }
-        .onAppear {
-            // Reload reminders when returning to the view
-            if let data = remindersData.data(using: .utf8),
-               let decodedReminders = try? JSONDecoder().decode([Reminder].self, from: data) {
-                reminders = decodedReminders
-            }
-        }
+        .onAppear(perform: loadReminders)
     }
 }
 
-struct Reminder: Identifiable, Codable {
-    var id = UUID()
-    var title: String
-    var time: Date
+struct ReminderRow: View {
+    let reminder: Reminder
+
+    var body: some View {
+        VStack(alignment: .leading) {
+            Text(reminder.title)
+                .font(.headline)
+            Text("Time: \(reminder.time, style: .time)")
+                .font(.subheadline)
+                .foregroundColor(.gray)
+        }
+        .padding(.vertical, 5)
+    }
 }

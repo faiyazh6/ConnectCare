@@ -1,13 +1,17 @@
 import SwiftUI
 
 struct CareNotesView: View {
-    @AppStorage("notes") private var notesData: String = "[]" // Persistent storage
-    @State private var notes: [String] = []
-    @State private var newNote = ""
+    @AppStorage("notes") private var notesData: String = "[]" // Persistent storage for notes
+    @State private var notes: [Note] = []
+    @State private var newNoteContent = ""
 
     init() {
+        loadNotes()
+    }
+
+    private func loadNotes() {
         if let data = notesData.data(using: .utf8),
-           let decodedNotes = try? JSONDecoder().decode([String].self, from: data) {
+           let decodedNotes = try? JSONDecoder().decode([Note].self, from: data) {
             notes = decodedNotes
         }
     }
@@ -19,46 +23,50 @@ struct CareNotesView: View {
         }
     }
 
+    private func addNote() {
+        let newNote = Note(content: newNoteContent, createdDate: Date())
+        notes.append(newNote)
+        saveNotes()
+        newNoteContent = ""
+    }
+
     var body: some View {
-        ZStack {
-            Color(.systemGroupedBackground)
-                .ignoresSafeArea()
+        VStack {
+            Text("Care Notes")
+                .font(.largeTitle)
+                .fontWeight(.bold)
+                .foregroundColor(.primaryColor)
+                .padding()
 
-            VStack {
-                Text("Care Notes")
-                    .font(.system(size: 28, weight: .bold, design: .rounded))
-                    .padding()
-
-                List {
-                    ForEach(notes, id: \.self) { note in
-                        Text(note)
-                            .padding(.vertical, 8)
-                    }
-                    .onDelete { indexSet in
-                        notes.remove(atOffsets: indexSet)
-                        saveNotes()
+            List {
+                ForEach(notes.indices, id: \.self) { index in
+                    VStack(alignment: .leading) {
+                        Text(notes[index].content)
+                            .font(.body)
+                        Text("Created: \(notes[index].createdDate, formatter: dateFormatter)")
+                            .font(.subheadline)
+                            .foregroundColor(.gray)
                     }
                 }
-                .listStyle(InsetGroupedListStyle())
-
-                HStack {
-                    TextField("Write a note", text: $newNote)
-                        .textFieldStyle(RoundedBorderTextFieldStyle())
-                        .padding()
-
-                    Button(action: {
-                        if !newNote.isEmpty {
-                            notes.append(newNote)
-                            saveNotes()
-                            newNote = ""
-                        }
-                    }) {
-                        ProfessionalButton(title: "Save", color: .purple)
-                            .frame(width: 120)
-                    }
+                .onDelete { indexSet in
+                    notes.remove(atOffsets: indexSet)
+                    saveNotes()
                 }
-                .padding(.horizontal)
             }
+            .listStyle(InsetGroupedListStyle())
+
+            HStack {
+                TextField("New Note", text: $newNoteContent)
+                    .textFieldStyle(RoundedBorderTextFieldStyle())
+
+                Button(action: addNote) {
+                    Image(systemName: "plus.circle.fill")
+                        .font(.largeTitle)
+                        .foregroundColor(.accentColor)
+                }
+            }
+            .padding()
         }
+        .onAppear(perform: loadNotes)
     }
 }
