@@ -1,59 +1,99 @@
 import SwiftUI
 
 struct RoleSelectionView: View {
-    @EnvironmentObject var appViewModel: AppViewModel
+    @AppStorage("userRole") var userRole: String = ""
     @State private var navigateHome = false
 
     var body: some View {
         NavigationStack {
-            VStack(spacing: 30) {
-                Spacer()
+            ZStack {
+                // Background Gradient
+                LinearGradient(
+                    colors: [Color.primaryColor, Color.secondaryColor],
+                    startPoint: .top,
+                    endPoint: .bottom
+                )
+                .ignoresSafeArea()
 
-                Text("Welcome to ConnectCare")
-                    .font(.largeTitle)
-                    .fontWeight(.bold)
-                    .foregroundColor(.primaryColor)
+                VStack(spacing: 30) {
+                    Spacer()
 
-                Text("Select Your Role")
-                    .font(.title3)
-                    .foregroundColor(.secondaryColor)
+                    // Welcome Message
+                    VStack(spacing: 10) {
+                        Text("Welcome to ConnectCare")
+                            .font(.system(size: 22, weight: .bold, design: .rounded))
+                            .foregroundColor(.white)
+                            .shadow(radius: 5)
 
-                RoleButton(role: "Primary Caregiver", color: .primaryColor) {
-                    appViewModel.userRole = "Primary Caregiver"
-                    navigateHome = true
+                        Text("Select Your Role")
+                            .font(.system(size: 15, weight: .medium, design: .rounded))
+                            .foregroundColor(.white.opacity(0.8))
+                    }
+
+                    // Role Selection Image
+                    Image("role_selection")
+                        .resizable()
+                        .scaledToFit()
+                        .frame(maxWidth: 600, maxHeight: 600)
+                        .clipShape(Circle())
+                        .overlay(Circle().stroke(Color.white, lineWidth: 4))
+                        .shadow(radius: 10)
+                        .padding(.bottom, 10)
+
+                    // Buttons
+                    VStack(spacing: 20) {
+                        Button(action: {
+                            userRole = "Primary Caregiver"
+                            navigateHome = true
+                        }) {
+                            RoleButtonView(
+                                title: "Primary Caregiver",
+                                gradientColors: [Color.primaryColor, Color.secondaryColor]
+                            )
+                        }
+
+                        Button(action: {
+                            userRole = "Family Member"
+                            navigateHome = true
+                        }) {
+                            RoleButtonView(
+                                title: "Family Member",
+                                gradientColors: [Color.accentColor, Color.dangerColor]
+                            )
+                        }
+                    }
+
+                    Spacer()
+
+                    NavigationLink(destination: HomeView(), isActive: $navigateHome) {
+                        EmptyView()
+                    }
                 }
-
-                RoleButton(role: "Family Member", color: .secondaryColor) {
-                    appViewModel.userRole = "Family Member"
-                    navigateHome = true
-                }
-
-                Spacer()
-
-                NavigationLink("", destination: HomeView().environmentObject(appViewModel), isActive: $navigateHome)
+                .padding()
             }
-            .padding()
-            .background(Color.backgroundColor.edgesIgnoringSafeArea(.all))
         }
     }
 }
 
-struct RoleButton: View {
-    var role: String
-    var color: Color
-    var action: () -> Void
+struct RoleButtonView: View {
+    let title: String
+    let gradientColors: [Color]
 
     var body: some View {
-        Button(action: action) {
-            Text(role)
-                .font(.headline)
-                .padding()
-                .frame(maxWidth: .infinity)
-                .background(color.gradient)
-                .foregroundColor(.white)
-                .cornerRadius(15)
-                .shadow(radius: 5)
-        }
-        .padding(.horizontal, 40)
+        Text(title)
+            .font(.headline)
+            .padding()
+            .frame(maxWidth: .infinity)
+            .background(
+                LinearGradient(
+                    colors: gradientColors,
+                    startPoint: .topLeading,
+                    endPoint: .bottomTrailing
+                )
+            )
+            .foregroundColor(.white)
+            .cornerRadius(15)
+            .shadow(color: gradientColors.last?.opacity(0.4) ?? .clear, radius: 5, x: 0, y: 5)
+            .padding(.horizontal)
     }
 }
